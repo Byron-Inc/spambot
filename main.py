@@ -10,19 +10,34 @@ Which would you like to spam:
 | 4 | Chinese characters (9900 lines)    |
 | 5 | Alphabet (26 lines)                |
 ------------------------------------------
-""")
+> """)
 
-"""
+method = input("""
+Which way would you like to send messages?
+------------------------------------------
+| 1 | Tab + Shift (Forum)                |
+| 2 | Enter (Social media)               |
+------------------------------------------
+> """)
+
+cooldown = int(input("How long is the cooldown between post?\n> "))
+
+def send(txt)
+    pyautogui.typewrite(txt)
+    if method == 1:
+        pyautogui.press("tab", "shiftright")
+    elif method == 2:
+        pyautogui.press("enter")
+
 files = ("dict.txt", "pkmn.txt", "beemovie.txt", "chinesechar.txt", "abc.txt")
 
 if int(txt) > 0 and int(txt) <= 5:
-	txtfile = files[int(txt) + 1]
+	txtfile = files[int(txt) - 1]
 else:
-	raise You
+	print("File doesn't exist.")
+
 
 f = open(txtfile, "r")
 for word in f:
-    pyautogui.typewrite(word)
-    pyautogui.press("enter")
-    time.sleep(1)
-"""
+    send(word)
+    time.sleep(cooldown)
