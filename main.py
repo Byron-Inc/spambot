@@ -12,22 +12,11 @@ Which would you like to spam:
 ------------------------------------------
 > """)
 
-method = input("""
-Which way would you like to send messages?
-------------------------------------------
-| 1 | Tab + Shift (Forum)                |
-| 2 | Enter (Social media)               |
-------------------------------------------
-> """)
-
 cooldown = int(input("How long is the cooldown between post?\n> "))
 
 def send(txt)
     pyautogui.typewrite(txt)
-    if method == 1:
-        pyautogui.press("tab", "shiftright")
-    elif method == 2:
-        pyautogui.press("enter")
+    pyautogui.press("enter")
 
 files = ("dict.txt", "pkmn.txt", "beemovie.txt", "chinesechar.txt", "abc.txt")
 
